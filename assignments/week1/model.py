@@ -15,7 +15,7 @@ class LinearRegression:
         """This fits the function"""
         rows, cols = X.shape
         w = np.linalg.inv(X.T @ X) @ X.T @ y
-        self.w = w
+        self.w = w[1:]
         self.b = w[0]
 
     def predict(self, X: np.ndarray) -> np.ndarray:
