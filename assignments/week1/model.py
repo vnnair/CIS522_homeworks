@@ -3,6 +3,7 @@ import numpy as np
 
 class LinearRegression:
     """This class uses the closed form solution in order to build a linear regression model from scratch"""
+
     w: np.ndarray
     b: float
 
@@ -13,17 +14,18 @@ class LinearRegression:
     def fit(self, X: np.ndarray, y: np.ndarray) -> None:
         """This fits the function"""
         rows, cols = X.shape
-        #X = np.hstack((np.ones((rows, 1)), X))
+        # X = np.hstack((np.ones((rows, 1)), X))
         w = np.linalg.inv(X.T @ X) @ X.T @ y
         self.w = w
-        #self.b = w[0]
+        # self.b = w[0]
 
     def predict(self, X: np.ndarray) -> np.ndarray:
         """This predicts the function"""
-        #rows, cols = X.shape
-        #X = np.hstack((np.ones((rows, 1)), X))  # add bias term to input
+        # rows, cols = X.shape
+        # X = np.hstack((np.ones((rows, 1)), X))  # add bias term to input
         pred = X @ self.w + self.b
         return pred
+
 
 class GradientDescentLinearRegression(LinearRegression):
     """
@@ -35,30 +37,30 @@ class GradientDescentLinearRegression(LinearRegression):
     ) -> None:
         """Fits the function. Updates weights and biases at each epoch"""
         rows, cols = X.shape
-        #X = np.hstack((np.ones((rows, 1)), X))  # adding bias term to input
-        self.w = np.random.randn(X.shape[1],1)  # initialize weights randomly
+        # X = np.hstack((np.ones((rows, 1)), X))  # adding bias term to input
+        self.w = np.random.randn(X.shape[1], 1)  # initialize weights randomly
         self.b = 1.0
 
         y = y.reshape(-1, 1)
 
         for i in range(epochs):
-            #Forward pass
+            # Forward pass
             preds = X @ self.w + self.b
             err = y - preds
 
-            #calculate loss
+            # calculate loss
             loss = np.sum(np.square(err))
             loss = loss / rows
 
             # calculate gradient
             dw = -1 * (X.T @ err) / rows
-            #db = np.sum(err) / rows
+            # db = np.sum(err) / rows
             db = -1 * np.sum(err) / rows
 
-            #update weights and biases
+            # update weights and biases
             self.w -= lr * dw
             self.b -= lr * db
-            #test
+            # test
 
     def predict(self, X: np.ndarray) -> np.ndarray:
         """
@@ -71,8 +73,8 @@ class GradientDescentLinearRegression(LinearRegression):
             np.ndarray: The predicted output.
 
         """
-        #rows, cols = X.shape
-        #X = np.concatenate((np.ones((rows, 1)), X), axis=1) # add bias term to input
+        # rows, cols = X.shape
+        # X = np.concatenate((np.ones((rows, 1)), X), axis=1) # add bias term to input
         pred = X @ self.w + self.b
         return pred
 
