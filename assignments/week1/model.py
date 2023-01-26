@@ -58,6 +58,7 @@ class GradientDescentLinearRegression(LinearRegression):
             #update weights and biases
             self.w -= lr * dw
             self.b -= lr * db
+            #test
 
     def predict(self, X: np.ndarray) -> np.ndarray:
         """
