@@ -9,6 +9,7 @@
             "name": "Bhaskar Sen",
             "pennkey": "bsen26"
         }
+
     ],
     "sources": [
         "https://medium.com/@johnodonnell123/linear-regression-and-gradient-descent-in-numpy-309364866ab0",

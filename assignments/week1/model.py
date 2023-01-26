@@ -37,9 +37,8 @@ class GradientDescentLinearRegression(LinearRegression):
     ) -> None:
         """Fits the function. Updates weights and biases at each epoch"""
         rows, cols = X.shape
-        # X = np.hstack((np.ones((rows, 1)), X))  # adding bias term to input
         self.w = np.random.randn(X.shape[1], 1)  # initialize weights randomly
-        self.b = 1.0
+        self.b = np.random.randn(1)
 
         y = y.reshape(-1, 1)
 
