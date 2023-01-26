@@ -9,15 +9,14 @@ class LinearRegression:
 
     def __init__(self):
         self.w = None
-        self.b = 1.0
+        self.b = None
 
     def fit(self, X: np.ndarray, y: np.ndarray) -> None:
         """This fits the function"""
         rows, cols = X.shape
-        # X = np.hstack((np.ones((rows, 1)), X))
         w = np.linalg.inv(X.T @ X) @ X.T @ y
         self.w = w
-        # self.b = w[0]
+        self.b = w[0]
 
     def predict(self, X: np.ndarray) -> np.ndarray:
         """This predicts the function"""
