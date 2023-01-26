@@ -2,8 +2,12 @@
     "assignment_name": "Assignment 1",
     "contributors": [
         {
-            "name": "Vishnu Nair, Bhaskar Sen",
-            "pennkey": "nvishnu, bsen26"
+            "name": "Vishnu Nair",
+            "pennkey": "nvishnu"
+        },
+        {
+            "name": "Bhaskar Sen",
+            "pennkey": "bsen26"
         }
     ],
     "sources": [
