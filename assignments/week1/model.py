@@ -12,18 +12,17 @@ class LinearRegression:
         self.b = None
 
     def fit(self, X: np.ndarray, y: np.ndarray) -> None:
-        """This fits the function"""
+        """This fits the function, using the closed form solution to update weights/biases"""
         rows, cols = X.shape
+        # Add a column of ones to the input to get bias
+        X = np.hstack((np.ones((rows, 1)), X))
         w = np.linalg.inv(X.T @ X) @ X.T @ y
         self.w = w[1:]
         self.b = w[0]
 
     def predict(self, X: np.ndarray) -> np.ndarray:
         """This predicts the function"""
-        # rows, cols = X.shape
-        # X = np.hstack((np.ones((rows, 1)), X))  # add bias term to input
-        pred = X @ self.w + self.b
-        return pred
+        return X @ self.w + self.b
 
 
 class GradientDescentLinearRegression(LinearRegression):
