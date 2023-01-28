@@ -69,10 +69,8 @@ class GradientDescentLinearRegression(LinearRegression):
             np.ndarray: The predicted output.
 
         """
-        # rows, cols = X.shape
-        # X = np.concatenate((np.ones((rows, 1)), X), axis=1) # add bias term to input
-        pred = X @ self.w + self.b
-        return pred
+
+        return X @ self.w + self.b
 
 
 # X = np.array([[1, 2], [3, 4]])
