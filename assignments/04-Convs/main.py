@@ -92,8 +92,8 @@ def train(
         model.eval()
         # Compute the accuracy on the test data:
         accuracy = compute_accuracy(model, test_loader, device)
-        if accuracy > ACCURACY_THRESHOLD:
-            break
+        # if accuracy > ACCURACY_THRESHOLD:
+        #     break
         # Print the results:
         print(f"Epoch {epoch + 1} | Test Accuracy: {accuracy:.2f}")
 

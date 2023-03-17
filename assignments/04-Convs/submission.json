@@ -2,11 +2,15 @@
     "assignment_name": "Convolutions",
     "contributors": [
         {
-            "name": "Change this to your name",
-            "pennkey": "MyPennKey"
+            "name": "Vishnu Nair",
+            "pennkey": "nvishnu"
+        },
+                {
+            "name": "Anshuman Swain",
+            "pennkey": "aswai"
         }
     ],
     "sources": [
-        "Don't forget to list your sources/attribution here!"
+        "N/A"
     ]
 }
